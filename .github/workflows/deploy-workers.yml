@@ -2,7 +2,7 @@ name: Deploy services
 on:
   push:
     branches:
-      - main
+      - dev
     paths:
       - apps/**
 jobs:
@@ -17,8 +17,8 @@ jobs:
       - name: export changed workers
         id: export-changed-workers
         run: |
-          npm install
-          FOLDERS=$(npm run get_changes --silent)
+          pnpm install
+          FOLDERS=$(pnpm run get_changes --silent)
           echo "services=$FOLDERS" >> $GITHUB_OUTPUT
       - run: echo ${{ fromJSON(steps.export-changed-workers.outputs.services) }}
     outputs:

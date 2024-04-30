@@ -31,7 +31,7 @@ async function run(env: Env) {
 	}
 
 	console.log('Happy birthday', birthday.users);
-	const birtdayMessage = 'Feliz pumpesito 🥳🎉 ' + birthday.users.map((user) => '@' + user).join(' ');
+	const birtdayMessage = 'Feliz pumpesito 🥳🎉 ' + birthday.users.map((user) => '@' + user).join(' '); 
 
 	await fetch(env.BOTNORREA_WEBHOOK, {
 		method: 'POST',
