@@ -17,6 +17,7 @@ jobs:
       - name: export changed workers
         id: export-changed-workers
         run: |
+          npm install -g pnpm
           pnpm install
           FOLDERS=$(pnpm run get_changes --silent)
           echo "services=$FOLDERS" >> $GITHUB_OUTPUT
