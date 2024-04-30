@@ -18,7 +18,7 @@ jobs:
         id: export-changed-workers
         run: |
           npm install -g pnpm
-          pnpm install
+          pnpm install --no-frozen-lockfile
           FOLDERS=$(pnpm run get_changes --silent)
           echo "services=$FOLDERS" >> $GITHUB_OUTPUT
       - run: echo ${{ fromJSON(steps.export-changed-workers.outputs.services) }}
