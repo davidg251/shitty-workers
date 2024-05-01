@@ -1,5 +1,6 @@
 #!/usr/bin/env zx
 //parameters
+$.shell = '/usr/bin/bash'
 const commit_id = process.env.GITHUB_REF_NAME
 const folder_level = process.env.FOLDER_LEVEL || 1
 const workers_folder = process.env.WORKERS_FOLDER || "services"
